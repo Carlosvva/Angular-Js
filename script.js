@@ -35,8 +35,6 @@ $scope.register = function(user){
 
 
 
-
-	
-
 }
 });
+
