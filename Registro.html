@@ -19,6 +19,8 @@
 		<title>Registro</title>
 	</head>
 	<body ng-controller="ModeloCtrl">
+		<!--Link Angular js-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 		<div class="container">
 			<div class="row main">
 				<div class="panel-heading">
@@ -36,6 +38,15 @@
 								<div class="input-group">
 									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
 									<input ng-model="user.nombre" type="text" class="form-control" name="name" id="name"  placeholder="Ingrese su Nombre"/>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="apellido" class="cols-sm-2 control-label">Apellido</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+									<input ng-model="user.apellido" type="text" class="form-control" name="name" id="name"  placeholder="Ingrese su Apellido"/>
 								</div>
 							</div>
 						</div>
@@ -70,39 +81,41 @@
 							</div>
 						</div>
 
+						<div class="form-group">
+							<label for="confirm" class="cols-sm-2 control-label">Confirme Password</label>
+							<div class="cols-sm-10">
+								<div class="input-group">
+									<span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+									<input ng-model="user.contrasena2" type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirme su Password"/>
+								</div>
+							</div>
+						</div>
+
 
 						<div class="form-group ">
-							<button ng-click="register(user)" type="button" class="btn btn-primary btn-lg btn-block login-button">Registro</button>
+							<button ng-click="register(user)" type="button" class="btn btn-primary btn-lg btn-block login-button">Registrarme</button>
 						</div>
-						<div class="login-register">
-				            <a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-				         </div>
 					</form>
 				</div>
 			</div>
-		</div>
-		<a href="#" data-toggle="modal" data-target="#login-modal">Login</a>
-		<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-    	  <div class="modal-dialog">
-				<div class="loginmodal-container">
-					<h1>Login to Your Account</h1><br>
-				  <form>
-					<input type="text" name="user" placeholder="Username">
-					<input type="password" name="pass" placeholder="Password">
-					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
-				  </form>
-					
-				  <div class="login-help">
-					<a href="#">Register</a> - <a href="#">Forgot Password</a>
-				  </div>
-				</div>
-			</div>
-		  </div>
-		  
-		  
-		<!--Link Angular js-->
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		</div>	  
 		<!--Call Script-->
 		<script src="script.js"></script>
+		<!--Firebase-->
+		<script src="https://www.gstatic.com/firebasejs/3.3.2/firebase.js"></script>
+		<!--Call Firebase-->
+		<script>
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyBinJ6sfqjJJumuH26-LZQkvm5c4UYvF-4",
+		    authDomain: "mysystem-192aa.firebaseapp.com",
+		    databaseURL: "https://mysystem-192aa.firebaseio.com",
+		    storageBucket: "mysystem-192aa.appspot.com",
+		  };
+		  firebase.initializeApp(config);
+		</script>
+		<!--Link Angular js-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+		    
 	</body>
 </html>
